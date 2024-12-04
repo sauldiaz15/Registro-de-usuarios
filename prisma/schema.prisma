@@ -1,0 +1,27 @@
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model post {
+  id      Int    @id @default(autoincrement())
+  title String
+  conten String
+}
+
+model Usuario {
+  id       Int     @id @default(autoincrement()) // Identificador único
+  documento String  @unique //DNI
+  nombre   String                              // Nombre del usuario
+  email    String  @unique                     // Correo electrónico único
+  creadoEn DateTime @default(now())            // Fecha de creación
+}
+

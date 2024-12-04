@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Registros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ONBOARDINGS</h1>
+
+        <!-- Formulario para agregar/modificar registros -->
+        <form id="userForm">
+            <input type="number" id="idInput" placeholder="ID" readonly>
+            <input type="text" id="documento" placeholder="Documento" required>
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="email" id="email" placeholder="Correo Electrónico" required>
+            <div>
+              <button type="submit" id="guardarButton">Guardar</button>
+              <button type="button" id="updateButton">Modificar</button>
+            </div>
+            
+        </form>
+
+        <div id="message"></div>
+
+        <hr>
+
+        <!-- Consulta por ID -->
+        <div>
+            <input type="number" id="searchId" placeholder="Buscar por ID">
+            <button onclick="searchById()">Buscar</button>
+        </div>
+
+        <hr>
+
+        <!-- Botón para eliminar por ID -->
+        <div>
+            <input type="number" id="deleteId" placeholder="Eliminar por ID">
+            <button onclick="deleteById()">Eliminar</button>
+        </div>
+
+        <hr>
+
+        <!-- Tabla de registros -->
+        <table id="recordsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Documento</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Creado En</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán los registros dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
